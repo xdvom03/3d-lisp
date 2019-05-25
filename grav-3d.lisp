@@ -1,6 +1,6 @@
 (defun start-program ()
   (defparameter *particles* nil)
-  (defparameter *G* 10000)
+  (defparameter *G* 100)
   (defparameter *step* 0.1)
   (add-particle '(0 0 500) '(0 0 0) 1000 1000)
   (add-particle '(100 0 500) '(0 30 0) 10 10)
