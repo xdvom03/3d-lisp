@@ -48,6 +48,7 @@
 
 (defun create-objects (time)
   (move-particles)
+  (setf *lines* nil)
   (dotimes (i (length *particles*))
     (let* ((p-new (nth i *particles*))
            (pos-new (first p-new)))
