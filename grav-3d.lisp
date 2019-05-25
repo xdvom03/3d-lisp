@@ -2,9 +2,9 @@
   (defparameter *particles* nil)
   (defparameter *G* 10000)
   (defparameter *step* 0.02)
-  (add-particle '(503 624 0) '(4.66 4.32 0) 1 1)
-  (add-particle '(600 600 0) '(-9.3 -8.647 0) 1 1)
-  (add-particle '(697 576 0) '(4.66 4.32 0) 1 1))
+  (add-particle '(0 0 500) '(0 0 0) 1000 1000)
+  (add-particle '(100 0 500) '(0 5 0) 10 10)
+  (add-particle '(110 0 500) '(0 5 0.1) 0.001 0.001))
 
 (defun add-particle (position speed mass charge)
   (push (list position speed mass charge) *particles*))
