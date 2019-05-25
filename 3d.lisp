@@ -23,7 +23,6 @@
         (defparameter *y-dir* (list 0 1 0))
         (defparameter *z-dir* (list 0 0 1))
         (defparameter *norm* (/ *screen-size* (* 2 (tan (/ *fov* 2))))) ;Distance of projective plane
-        (defparameter *mouse-fix* nil) ;Where the mouse should return to, set by clicking, TEMPORARY
   )))
 
 
