@@ -196,8 +196,8 @@
     (after 0 #'(lambda () (tick (1+ a) new)))))
 
 (defun run ()
+  (init t)
   (load (first (print ext:*args*)))
   (start-program);Must be provided, serves as init for the program provided
-  (init t)
   (with-ltk ()
     (tick 0 nil)))
