@@ -149,19 +149,19 @@
           #'(lambda (a) (identity a) (setf *view-center* (mapcar #'+ *view-center* (mapcar #'(lambda (a) (* a *move-step*)) *x-dir*)))))
     (bind c 
           "<Right>" 
-          #'(lambda (a) (identity a) (setf *view-center* (mapcar #'+ *view-center* (mapcar #'(lambda (a) (* a *move-step*)) (mapcar #'- *x-dir*))))))
+          #'(lambda (a) (identity a) (setf *view-center* (mapcar #'- *view-center* (mapcar #'(lambda (a) (* a *move-step*)) *x-dir*)))))
     (bind c 
-          "<Up>" 
+          "<Shift_L>" 
           #'(lambda (a) (identity a) (setf *view-center* (mapcar #'+ *view-center* (mapcar #'(lambda (a) (* a *move-step*)) *y-dir*)))))
     (bind c 
-          "<Down>" 
-          #'(lambda (a) (identity a) (setf *view-center* (mapcar #'+ *view-center* (mapcar #'(lambda (a) (* a *move-step*)) (mapcar #'- *y-dir*))))))
+          "<Control_L>" 
+          #'(lambda (a) (identity a) (setf *view-center* (mapcar #'- *view-center* (mapcar #'(lambda (a) (* a *move-step*)) *y-dir*)))))
     (bind c 
-          "<q>" 
+          "<Down>" 
           #'(lambda (a) (identity a) (setf *view-center* (mapcar #'+ *view-center* (mapcar #'(lambda (a) (* a *move-step*)) *z-dir*)))))
     (bind c 
-          "<a>" 
-          #'(lambda (a) (identity a) (setf *view-center* (mapcar #'+ *view-center* (mapcar #'(lambda (a) (* a *move-step*)) (mapcar #'- *z-dir*))))))
+          "<Up>" 
+          #'(lambda (a) (identity a) (setf *view-center* (mapcar #'- *view-center* (mapcar #'(lambda (a) (* a *move-step*)) *z-dir*)))))
     (bind c
           "<w>"
           #'(lambda (a) (identity a) (rot-cam-x *rot-step*)))
@@ -198,6 +198,6 @@
 (defun run ()
   (init t)
   (load (first (print ext:*args*)))
-  (start-program);Must be provided, serves as init for the program provided
+  (start-program) ;Must be provided, serves as init for the program provided
   (with-ltk ()
     (tick 0 nil)))
