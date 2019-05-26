@@ -1,6 +1,11 @@
 # 3d-lisp
 Very basic (lines, triangles) 3D engine in Common Lisp.<br>
 
+# How to install/use
+Dependencies: tcl, tk, clisp (available via pacman/apt-get)<br>
+Set file "project" as executable<br>
+Run file "project" with the path to the file you wish to run in the engine, for example ./project 3d-grav.lisp for the test program provided.
+
 # Provided functions
 You provide a file with two functions: create-objects and start-program. start-program is run once to initialise your task, while create-objects is run each tick to move around objects.<br>
 Within this file, you can set up your own global variables, etc. If you wish to do any calculations periodically, make them a part of create-objects.
@@ -50,31 +55,27 @@ add-triangle<br>
 add-cube<br>
 
 # Constants
-All coordinates are linked lists of components unless specified otherwise<br>
-\*view-center\* = Position of camera in 3D coordinates<br>
+All coordinates are linked lists of components unless specified otherwise.<br>
 \*canvas-center\* = 2D coordinates of the middle of the canvas printed on<br>
 \*screen-size\* = Side of canvas in pixels<br>
 \*fog\* = Distance of plane that cuts off objects (to prevent objects behind camera from showing up and to block division by zero)<br>
 \*fov\* = FOV in radians (default 1)<br>
 \*move-step\* ;How fast the camera moves per button press<br>
 \*rot-step\* ;How fast the camera rotates - radians per button press<br>
-\*x-dir\* = Unit vector pointing in the camera's x-axis - right (defines orientation in space)<br>
-\*y-dir\* = Unit vector pointing in the camera's y-axis - up (defines orientation in space)<br>
-\*z-dir\* = Unit vector pointing in the camera's z-axis - forward (defines orientation in space)<br>
 \*norm\* = Distance of projective plane<br>
 
 # Data storage
-*triangles* = list of triangles<br>
-*lines* = list of lines<br>
+
+\*x-dir\* = Unit vector pointing in the camera's x-axis - right (defines orientation in space)<br>
+\*y-dir\* = Unit vector pointing in the camera's y-axis - up (defines orientation in space)<br>
+\*z-dir\* = Unit vector pointing in the camera's z-axis - forward (defines orientation in space)<br>
+\*view-center\* = Position of camera in 3D coordinates<br>
+\*triangles\* = list of triangles<br>
+\*lines\* = list of lines<br>
 Data structure of lines, triangles etc. described in source code under respective adding functions
 
 # Controls
 Arrow keys to move left/right and front/back. Left Shift/Control to go up and down, respectively.
-
-# How to install/use
-Dependencies: tcl, tk, clisp (available via pacman/apt-get)<br>
-Set file "project" as executable<br>
-Run file "project" with the path to the file you wish to run in the engine, for example ./project 3d-grav.lisp for the test program provided.
 
 # Used software
 Portacle<br>
@@ -84,7 +85,8 @@ CLISP<br>
 
 # Caveat emptor
 
-Potential issues:<br>
+Potential issues or improvements:<br>
 This project was tested on Linux Mint and Ubuntu. It may fail on other systems. A potential cause of such a failure is an unexpected install location of tcl/tk. Make sure that "/usr/bin/wish" is a valid file location.<br>
 The engine is capable of displaying 2D shapes using the create-triangle function. However, when two triangles overlap within the field of view, it is not resolved properly. This can cause triangles to appear behind lines when they are not. This is being worked on.<br>
-When defining your own functions within your file, avoid redefining functions from the engine files. Their list can be found above.
+When defining your own functions within your file, avoid redefining functions from the engine files. Their list can be found above.<br>
+Keys used for movement are not changable.
