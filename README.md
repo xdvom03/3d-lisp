@@ -20,7 +20,7 @@ rotate-around-point<br>
 remove-nth<br>
 remove-last<br>
 
-Utility functions which have no side effects, but which are dependent on the camera angle:
+Utility functions which have no side effects, but which are dependent on the camera angle:<br>
 canvas-loc<br>
 real-locs<br>
 real-loc<br>
@@ -28,13 +28,13 @@ in-fog-p<br>
 fog-cutoff-loc<br>
 sort-by-fog<br>
 
-These functions rotate the camera:
+These functions rotate the camera:<br>
 rot-cam-x<br>
 rot-cam-y<br>
 rot-cam-z<br>
 rot-cam-absolute<br>
 
-These functions belong to the program and should never be called:
+These functions belong to the engine and should never be called:<br>
 run<br>
 tick<br>
 tick-compute<br>
@@ -49,8 +49,28 @@ add-line<br>
 add-triangle<br>
 add-cube<br>
 
+# Constants
 
-[TBD: Global variables, check licence etc.]
+All coordinates are linked lists of components unless specified otherwise<br>
+\*view-center\* = Position of camera in 3D coordinates<br>
+*canvas-center* = 2D coordinates of the middle of the canvas printed on<br>
+*screen-size* = Side of canvas in pixels<br>
+*fog* = Distance of plane that cuts off objects (to prevent objects behind camera from showing up and to block division by zero)<br>
+*fov* = FOV in radians (default 1)<br>
+*move-step* ;How fast the camera moves per button press<br>
+*rot-step* ;How fast the camera rotates - radians per button press<br>
+*x-dir* = Unit vector pointing in the camera's x-axis - right (defines orientation in space)<br>
+*y-dir* = Unit vector pointing in the camera's y-axis - up (defines orientation in space)<br>
+*z-dir* = Unit vector pointing in the camera's z-axis - forward (defines orientation in space)<br>
+*norm* = Distance of projective plane<br>
+
+# Data storage
+*triangles* = list of triangles<br>
+*lines* = list of lines<br>
+Data structure of lines, triangles etc. described in source code under respective adding functions
+
+# Tlačítka ovládání English
+Arrow keys to move left/right and front/back. Space/Ctrl to go up and down, respectively.
 
 
 # How to install/use
