@@ -136,39 +136,6 @@
 
 ;;RUNNING, UPDATING, CREATING WIDGETS
 
-
-(defun create-objects (time)
-  (identity time)
-  (init nil)
-  (add-cube '(-500 -500 -500) 100 "#000")
-  (add-cube '(-500 -500 500) 100 "#001")
-  (add-cube '(-500 500 -500) 100 "#012")
-  (add-cube '(-500 500 500) 100 "#123")
-  (add-cube '(500 -500 -500) 100 "#234")
-  (add-cube '(500 -500 500) 100 "#345")
-  (add-cube '(500 500 -500) 100 "#456")
-  (add-cube '(500 500 500) 100 "#567")
-  (add-cube '(-500 -500 0) 100 "#678")
-  (add-cube '(-500 500 0) 100 "#789")
-  (add-cube '(500 -500 0) 100 "#89A")
-  (add-cube '(500 500 0) 100 "#9AB")
-  (add-cube '(0 -500 0) 100 "#ABC")
-  (add-cube '(0 500 0) 100 "#BCD")
-  (add-cube '(0 0 0) 100 "#CDE")
-  (add-cube '(500 0 500) 100 "#DEF")
-  (add-cube '(-500 0 500) 100 "#BAF")
-  (add-cube '(500 0 -500) 100 "#312")
-  (add-cube '(-500 0 -500) 100 "#156")
-  (add-cube '(0 0 500) 100 "#495")
-  (add-cube '(0 0 -500) 100 "#624")
-  (add-cube '(0 500 500) 100 "#981")
-  (add-cube '(0 500 -500) 100 "#3A4")
-  (add-cube '(0 -500 500) 100 "#C01")
-  (add-cube '(0 -500 -500) 100 "#BFF")
-  (add-cube '(500 0 0) 100 "#CA1")
-  (add-cube '(-500 0 0) 100 "#BAC")
-  (add-triangle '(500 500 700) '(0 500 700) '(200 200 700) "#DEB" (list "#BDE" nil "#196")))
-
 (defun tick-compute (num widgets)
   ;;Creates new widgets and calls main functions
   (let ((c (make-instance 'canvas
@@ -214,7 +181,7 @@
           "<f>"
           #'(lambda (a) (identity a) (rot-cam-z (- *rot-step*))))
     (focus c)
-    (create-objects num)
+    (create-objects num) ;Must be provided, uses time as parameter
     (render c)
     (pack c)
     (pack b)
@@ -229,6 +196,8 @@
     (after 0 #'(lambda () (tick (1+ a) new)))))
 
 (defun run ()
+  (load (first (print ext:*args*)))
+  (start-program);Must be provided, serves as init for the program provided
   (init t)
   (with-ltk ()
     (tick 0 nil)))
