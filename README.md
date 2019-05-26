@@ -50,28 +50,26 @@ add-triangle<br>
 add-cube<br>
 
 # Constants
-
 All coordinates are linked lists of components unless specified otherwise<br>
 \*view-center\* = Position of camera in 3D coordinates<br>
-*canvas-center* = 2D coordinates of the middle of the canvas printed on<br>
-*screen-size* = Side of canvas in pixels<br>
-*fog* = Distance of plane that cuts off objects (to prevent objects behind camera from showing up and to block division by zero)<br>
-*fov* = FOV in radians (default 1)<br>
-*move-step* ;How fast the camera moves per button press<br>
-*rot-step* ;How fast the camera rotates - radians per button press<br>
-*x-dir* = Unit vector pointing in the camera's x-axis - right (defines orientation in space)<br>
-*y-dir* = Unit vector pointing in the camera's y-axis - up (defines orientation in space)<br>
-*z-dir* = Unit vector pointing in the camera's z-axis - forward (defines orientation in space)<br>
-*norm* = Distance of projective plane<br>
+\*canvas-center\* = 2D coordinates of the middle of the canvas printed on<br>
+\*screen-size\* = Side of canvas in pixels<br>
+\*fog\* = Distance of plane that cuts off objects (to prevent objects behind camera from showing up and to block division by zero)<br>
+\*fov\* = FOV in radians (default 1)<br>
+\*move-step\* ;How fast the camera moves per button press<br>
+\*rot-step\* ;How fast the camera rotates - radians per button press<br>
+\*x-dir\* = Unit vector pointing in the camera's x-axis - right (defines orientation in space)<br>
+\*y-dir\* = Unit vector pointing in the camera's y-axis - up (defines orientation in space)<br>
+\*z-dir\* = Unit vector pointing in the camera's z-axis - forward (defines orientation in space)<br>
+\*norm\* = Distance of projective plane<br>
 
 # Data storage
 *triangles* = list of triangles<br>
 *lines* = list of lines<br>
 Data structure of lines, triangles etc. described in source code under respective adding functions
 
-# Tlačítka ovládání English
-Arrow keys to move left/right and front/back. Space/Ctrl to go up and down, respectively.
-
+# Controls
+Arrow keys to move left/right and front/back. Left Shift/Control to go up and down, respectively.
 
 # How to install/use
 Dependencies: tcl, tk, clisp (available via pacman/apt-get)<br>
@@ -79,11 +77,10 @@ Set file "project" as executable<br>
 Run file "project" with the path to the file you wish to run in the engine, for example ./project 3d-grav.lisp for the test program provided.
 
 # Used software
-
-Portacle
-VirtualBox
-Linux Mint
-CLISP
+Portacle<br>
+VirtualBox<br>
+Linux Mint<br>
+CLISP<br>
 
 # Caveat emptor
 
