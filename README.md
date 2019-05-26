@@ -7,8 +7,8 @@ Set file "project" as executable<br>
 Run file "project" with the path to the file you wish to run in the engine, for example ./project 3d-grav.lisp for the test program provided.
 
 # Provided functions
-You provide a file with two functions: create-objects and start-program. start-program is run once to initialise your task, while create-objects is run each tick to move around objects.<br>
-Within this file, you can set up your own global variables, etc. If you wish to do any calculations periodically, make them a part of create-objects.
+You provide a Common Lisp file defining two functions: create-objects and start-program. start-program is run once to initialise your task, while create-objects is run each tick to move around objects.<br>
+Within this file, you can set up your own global variables, etc. If you wish to do any calculations periodically, make them a part of create-objects. For all function documentation, read the respective source files.
 
 Utility functions that you are free to use (as they are free of side effects):<br>
 sq<br>
