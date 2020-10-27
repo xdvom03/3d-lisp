@@ -4,7 +4,7 @@ Very basic (lines, triangles) 3D engine in Common Lisp.<br>
 # How to install/use
 Dependencies: tcl, tk, clisp (available via pacman/apt-get)<br>
 Set file "project" as executable<br>
-Run file "project" with the path to the file you wish to run in the engine, for example ./project 3d-grav.lisp for the test program provided.
+Run file "project" with the path to the file you wish to run in the engine, for example ./project grav-3d.lisp for the test program provided.
 
 # Provided functions
 You provide a Common Lisp file defining two functions: create-objects and start-program. start-program is run once to initialise your task, while create-objects is run each tick to move around objects.<br>
